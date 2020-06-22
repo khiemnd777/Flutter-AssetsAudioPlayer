@@ -1,16 +1,12 @@
 import 'dart:async';
 
 import 'package:assets_audio_player/assets_audio_player.dart';
-import 'package:assets_audio_player_example/player/PlaySpeedSelector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:rxdart/subjects.dart';
 
-import 'player/ForwardRewindSelector.dart';
 import 'player/PlayingControls.dart';
 import 'player/PositionSeekWidget.dart';
 import 'player/SongsSelector.dart';
-import 'player/VolumeSelector.dart';
 
 void main() {
   AssetsAudioPlayer.setupNotificationsOpenAction((notification) {
@@ -36,28 +32,39 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final audios = <Audio>[
-    //Audio.network(
-    //  "https://d14nt81hc5bide.cloudfront.net/U7ZRzzHfk8pvmW28sziKKPzK",
-    //  metas: Metas(
-    //    id: "Invalid",
-    //    title: "Invalid",
-    //    artist: "Florent Champigny",
-    //    album: "OnlineAlbum",
-    //    image: MetasImage.network(
-    //        "https://image.shutterstock.com/image-vector/pop-music-text-art-colorful-600w-515538502.jpg"),
-    //  ),
-    //),
+    // Audio.network(
+    //   "https://d14nt81hc5bide.cloudfront.net/U7ZRzzHfk8pvmW28sziKKPzK",
+    //   metas: Metas(
+    //     id: "Invalid",
+    //     title: "Invalid",
+    //     artist: "Florent Champigny",
+    //     album: "OnlineAlbum",
+    //     image: MetasImage.network(
+    //         "https://image.shutterstock.com/image-vector/pop-music-text-art-colorful-600w-515538502.jpg"),
+    //   ),
+    // ),
+    Audio.network(
+      "http://thanhcavietnam.us/FilesNhac/TacGia/Lausay/DoaHoaLongKinhDang-lausay-HoaTau.mp3",
+      metas: Metas(
+        id: 'id',
+        title: 'Đoá hoa lòng kính dâng',
+        artist: 'Lau Sậy',
+        image: MetasImage.network(
+          "http://thanhcavietnam.net/ThanhCaVN/templates/green/img/no_singer.gif",
+        ),
+      ),
+    ),
     Audio.network(
       "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Music_for_Video/springtide/Sounds_strange_weird_but_unmistakably_romantic_Vol1/springtide_-_03_-_We_Are_Heading_to_the_East.mp3",
       metas: Metas(
-          id: "Online",
-          title: "Online",
-          artist: "Florent Champigny",
-          album: "OnlineAlbum",
-          // image: MetasImage.network("https://www.google.com")
-          image: MetasImage.network(
-              "https://image.shutterstock.com/image-vector/pop-music-text-art-colorful-600w-515538502.jpg"),
-          ),
+        id: "Online",
+        title: "Online",
+        artist: "Florent Champigny",
+        album: "OnlineAlbum",
+        // image: MetasImage.network("https://www.google.com")
+        image: MetasImage.network(
+            "https://image.shutterstock.com/image-vector/pop-music-text-art-colorful-600w-515538502.jpg"),
+      ),
     ),
     Audio(
       "assets/audios/rock.mp3",
@@ -351,19 +358,19 @@ class _MyAppState extends State<MyApp> {
                             showNotification: true,
                             playInBackground: PlayInBackground.enabled,
                             notificationSettings: NotificationSettings(
-                              //seekBarEnabled: false,
-                              //stopEnabled: true,
-                              //customStopAction: (player){
-                              //  player.stop();
-                              //}
-                              //prevEnabled: false,
-                              //customNextAction: (player) {
-                              //  print("next");
-                              //}
-                              //customStopIcon: AndroidResDrawable(name: "ic_stop_custom"),
-                              //customPauseIcon: AndroidResDrawable(name:"ic_pause_custom"),
-                              //customPlayIcon: AndroidResDrawable(name:"ic_play_custom"),
-                            ),
+                                //seekBarEnabled: false,
+                                //stopEnabled: true,
+                                //customStopAction: (player){
+                                //  player.stop();
+                                //}
+                                //prevEnabled: false,
+                                //customNextAction: (player) {
+                                //  print("next");
+                                //}
+                                //customStopIcon: AndroidResDrawable(name: "ic_stop_custom"),
+                                //customPauseIcon: AndroidResDrawable(name:"ic_pause_custom"),
+                                //customPlayIcon: AndroidResDrawable(name:"ic_play_custom"),
+                                ),
                           );
                         } catch (e) {
                           print(e);
